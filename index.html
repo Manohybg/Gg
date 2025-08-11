@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+<meta charset="UTF-8">
+<title>Hafatra ho Anao ❤️</title>
+<style>
+    body {
+        background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+    }
+    .container {
+        animation: fadeIn 2s ease-in-out;
+    }
+    h1, h2 {
+        text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    h1 {
+        font-size: 2.5em;
+        animation: pulse 2s infinite;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        background-color: #ff4b5c;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        cursor: pointer;
+        animation: bounce 1.5s infinite;
+        margin-top: 20px;
+    }
+    button:hover {
+        background-color: #ff1e3c;
+    }
+    img.fullscreen {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .message {
+        position: relative;
+        z-index: 2;
+        font-size: 2em;
+        margin-top: 20px;
+        animation: fadeIn 2.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes pulse {
+        0%, 100% {transform: scale(1);}
+        50% {transform: scale(1.1);}
+    }
+    @keyframes bounce {
+        0%, 100% {transform: translateY(0);}
+        50% {transform: translateY(-5px);}
+    }
+</style>
+</head>
+<body>
+
+<div class="container" id="page1">
+    <h1>💌 Hafatra avy aty amin'i Manohy</h1>
+    <button onclick="nextPage(2)">Continue ➡️</button>
+</div>
+
+<div class="container" id="page2" style="display:none;">
+    <h1>Tiako ianao  ❤️</h1>
+    <button onclick="nextPage(3)">Continue ➡️</button>
+</div>
+
+<div id="page3" style="display:none;">
+    <img src="Ragidro.jpeg" alt="Sary" class="fullscreen">
+    <div class="message">💖 Izany no hafatro ho anao 💖</div>
+</div>
+
+<script>
+    function nextPage(num) {
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "none";
+        document.getElementById("page3").style.display = "none";
+        document.getElementById("page" + num).style.display = "block";
+    }
+</script>
+
+</body>
+</html>
